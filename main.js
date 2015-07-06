@@ -134,7 +134,7 @@ Menu.prototype.toString = function(){
 	return this.menu.join('\n');
 }
 
-// console.log(newMenu.toString());
+console.log(newMenu.toString());
 
 var Restaurant = function(name, description, menu) { 
 
@@ -154,23 +154,8 @@ Restaurant.prototype.toString = function(){
 console.log(newRest.toString());
 
 
+var Customer = function(dietaryPreference){
+	this.dietaryPreference = dietaryPreference
+}
 
 
-
-// var Customer = function(dietaryPreference){
-	
-// 	this.dietaryPreference = dietaryPreference
-
-// }
-
-
-
-
-// FoodItem.prototype.toString = function() {
-
-// 	this.name = name || " ";
-// 	this.description = description || " ";
-// 	this.price = price || " ";
-// 	this.foodItems = foodItems.join(" ");
-
-// }

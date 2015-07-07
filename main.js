@@ -57,9 +57,9 @@ var Order = function(array) {
 	this.order = array;
 }
 
-var Burrito = new Plate("Burrito", "tasty", 10.50, ["meat", " beans", " queso", " pico", " bread"])
+var Burrito = new Plate("Burrito", "tasty", 10.75, ["meat", " beans", " queso", " pico", " bread"])
 var Guacomole = new Plate("Guacomole", "green", 8, ["citrus", " avocado", " onions"])
-var Marg = new Drink("Margarita", "super-sweet", 5, ["sugar", " water", " tequila"])
+var Marg = new Drink("Margarita", "super-sweet", 5.25, ["sugar", " water", " tequila"])
 
 var plates = [Burrito, Guacomole]
 
@@ -67,12 +67,12 @@ var nextOrder = new Order([Burrito, Guacomole, Marg]);
 
 Plate.prototype.create = function() {
 	var menuItem = $('<div id=' + this.name + ' class="menuItem"></div>');
-	menuItem.text("This " + this.name + " is " + this.description + " and costs " + this.price + " dollars, and is made of " + this.foodItems);
+	menuItem.text("This " + this.name + " is " + this.description + " and costs $" + this.price + ", and is made of " + this.foodItems);
 	return menuItem;
 }
 Drink.prototype.create = function() {
 	var menuItem = $('<div id=' + this.name + ' class="menuItem"></div>');
-	menuItem.text("This " + this.name + " is " + this.description + " and costs " + this.price + " dollars, and is made of " + this.foodItems);
+	menuItem.text("This " + this.name + " is " + this.description + " and costs $" + this.price + ", and is made of " + this.foodItems);
 	return menuItem;
 }
 
@@ -104,8 +104,8 @@ $('body').on('click', '.getTotal', function ( event ) {
 	{
 	    sum += parseFloat($(this).text());
 	});
-		$('.displayTotal').append(sum);
-	});
+	$('.displayTotal').append(sum);
+});
 
 
 

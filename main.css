@@ -9,18 +9,21 @@ body {
 }
 
 .plate-container {
-
+	margin-left: 40%;
+	margin-right: 40%;
+	float: left;
+	text-align: center;
 
 }
 
 .menuItem {
-	margin-left: 40%;
-	margin-right: 40%;
-	width : 20%;
+
 	background-color: lightgray;
 	text-align: center;
 	padding: 10px;
 	border-radius: 5px;
+	margin: 10px;
+	border: 2px solid darkgray;
 }
 
 .button {
@@ -39,15 +42,21 @@ body {
 }
 
 .order-container {
-	float: right;
-	margin-right: 50px;
+
 	height: auto;
-	width: 100px;
+	width: 130px;
 	background-color: lightgray;
 	border-radius: 5px;
 	padding: 10px;
 	text-align: center;
+	margin: 10px;
+}
 
+.order-box {
+	position: fixed;
+	margin-top: 10px;
+	float: right;
+	margin-right: 50px;
 }
 
 .getTotal {
@@ -63,16 +72,17 @@ body {
 }
 
 .displayTotal {
-	overflow: hidden;
+
 	float: right;
 	margin-right: 50px;
-	height: 100px;
-	line-height: 100px;
-	width: auto;
+	height: 40px;
+	line-height: 40px;
+	width: 130px;
 	background-color: lightgray;
 	border-radius: 5px;
 	padding: 10px;
 	text-align: center;
+	margin: 10px;
 }
 
 .clearFloat {

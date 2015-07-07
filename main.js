@@ -34,18 +34,18 @@ var Drink = function(name, description, price, foodItems){
 
 }
 
-var Soda = new Drink("coke", "super-sweet", "$5.00", ["sugar", "water", "food-coloring"])
+// var Soda = new Drink("coke", "super-sweet", "$5.00", ["sugar", "water", "food-coloring"])
 
-Drink.prototype.toString = function() {
+// Drink.prototype.toString = function() {
 
- return ("This " + this.name + " is very " + this.description + " and costs " + this.price + " and is made of " + this.foodItems);
-}
+//  return ("This " + this.name + " is " + this.description + " and costs " + this.price + " and is made of " + this.foodItems);
+// }
 
-console.log(Soda.toString());
+// console.log(Soda.toString());
 
 
 var Plate = function(name, description, price, foodItems){
-	
+
 	this.name = name || " ";
 	this.description = description || " ";
 	this.price = price || " ";
@@ -57,18 +57,61 @@ var Order = function(array) {
 	this.order = array;
 }
 
-var Burrito = new Plate("Burrito", "tasty", "$10", ["meat", "beans", "queso", "pico", "bread"])
-var Guacomole = new Plate("Guacomole", "green", "$5", ["citrus", "avocado", "onions"])
-var Marg = new Drink("margarita", "super-sweet", "$5.00", ["sugar", "water", "tequila"])
+var Burrito = new Plate("Burrito", "tasty", 10.50, ["meat", " beans", " queso", " pico", " bread"])
+var Guacomole = new Plate("Guacomole", "green", 8, ["citrus", " avocado", " onions"])
+var Marg = new Drink("Margarita", "super-sweet", 5, ["sugar", " water", " tequila"])
+
+var plates = [Burrito, Guacomole]
 
 var nextOrder = new Order([Burrito, Guacomole, Marg]);
-// console.log(nextOrder);
+
+Plate.prototype.create = function() {
+	var menuItem = $('<div id=' + this.name + ' class="menuItem"></div>');
+	menuItem.text("This " + this.name + " is " + this.description + " and costs " + this.price + " dollars, and is made of " + this.foodItems);
+	return menuItem;
+}
+Drink.prototype.create = function() {
+	var menuItem = $('<div id=' + this.name + ' class="menuItem"></div>');
+	menuItem.text("This " + this.name + " is " + this.description + " and costs " + this.price + " dollars, and is made of " + this.foodItems);
+	return menuItem;
+}
+
+$('.plate-container').append(Burrito.create());
+$('.plate-container').append(Guacomole.create());
+$('.plate-container').append(Marg.create());
+
+$('body').on('click', '#Burrito', function( event ) {
+	var price = $('<div class="itemPrice">"price"</div>');
+	price.text(Burrito.price);
+	$('.order-container').append(price);
+});
+$('body').on('click', '#Guacomole', function( event ) {
+	var price = $('<div class="itemPrice">"price"</div>');
+	price.text(Guacomole.price);
+	$('.order-container').append(price);
+});
+$('body').on('click', '#Marg', function( event ) {
+	var price = $('<div class="itemPrice">"price"</div>');
+	price.text(Marg.price);
+	$('.order-container').append(price);
+});
+
+var totalprice = 0;
+
+$('body').on('click', '.getTotal', function ( event ) {
+	var sum = 0;
+	$('.itemPrice').each(function()
+	{
+	    sum += parseFloat($(this).text());
+	});
+		$('.displayTotal').append(sum);
+	});
 
 
 
 Plate.prototype.toString = function() {
 
-	return ("This " + this.name + " is very " + this.description + " and costs " + this.price + " and is made of " + this.foodItems);
+	return ("This " + this.name + " is " + this.description + " and costs " + this.price + " and is made of " + this.foodItems);
 }
 
 console.log(Burrito.toString());

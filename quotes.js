@@ -1,4 +1,5 @@
-var userQuotes = [];
+
+
 
 var Quote = function(quote, author) {
 	this.quote = quote || "Error: Quote is required";
@@ -15,7 +16,7 @@ $('.text-form').on('submit', function() {
 	var newAuthor = $("#newAuthor").val();
 	var newEntry = new Quote(newQuote, newAuthor);
 
-	userQuotes.push(newEntry);
+
 
 	var button = $('<button class="delete">Delete Entry</button>');
 	var stars = $('<div class="rating"><span class ="star" id="1">☆</span><span class ="star" id="2">☆</span><span class ="star" id="3">☆</span><span class ="star" id="4">☆</span><span class ="star" id="5">☆</span></div>');

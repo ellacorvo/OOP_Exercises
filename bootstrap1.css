@@ -2,3 +2,25 @@
 	background-color: black;
 	color: lightgray;
 }
+
+.grey {
+	background-color: lightgray;
+}
+
+.jumbo-padding {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.mini-padding {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.header-text {
+	font-size: 63px;
+}
+
+.line {
+	border-bottom: 1px solid darkgray;
+}
